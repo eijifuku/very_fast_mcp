@@ -88,9 +88,19 @@ def materialize_app_template(target: Path) -> None:
             gi_dst.unlink()
         gi_src.rename(gi_dst)
 
+def _render_and_write(target_dir: Path, template_path: Path, replacements: dict[str, str]) -> None:
+    """Render a template file with replacements and write to target_dir."""
+    with resources.as_file(template_path) as template_file:
+        content = template_file.read_text(encoding="utf-8")
+    for key, value in replacements.items():
+        content = content.replace(f"{{{{ {key} }}}}", value)
+    (target_dir / template_path.name).write_text(content, encoding="utf-8")
+
+
 def cmd_new(args: argparse.Namespace) -> None:
     """Handle the ``new`` command."""
     target = Path(args.dir)
+    project_name = target.name # プロジェクト名を取得
 
     if target.exists() and any(target.iterdir()) and not args.force:
         print(f"[ERROR] {target} is not empty. Use --force to overwrite.")
@@ -100,6 +110,14 @@ def cmd_new(args: argparse.Namespace) -> None:
 
     _copy_pkg_dir("veryfastmcp.templates.mcp", target)
     materialize_app_template(target)
+
+    replacements = {"project_name": project_name}
+
+    # Render templates with project name
+    _render_and_write(target, resources.files("veryfastmcp.templates.mcp") / "mcp_server.py", replacements)
+    _render_and_write(target, resources.files("veryfastmcp.templates.mcp") / "pyproject.toml", replacements)
+    _render_and_write(target / "app", resources.files("veryfastmcp.templates.app") / "docker-compose.yml", replacements)
+    _render_and_write(target / "app", resources.files("veryfastmcp.templates.app") / "Dockerfile", replacements)
 
     # Copy test client script to project root
     test_client_src = resources.files("veryfastmcp.templates.mcp") / "test_client_stdio.py"
@@ -141,8 +159,8 @@ def cmd_generate_tool(args: argparse.Namespace) -> None:
             "{{ class_base }}", class_base
         )
 
-    tool_code = render(tdir / "tool.py.j2")
-    test_code = render(tdir / "test_tool.py.j2")
+    tool_code = render(tdir / "tool.py")
+    test_code = render(tdir / "test_tool.py")
 
     tool_path = Path("mcp_app/tools") / f"{tool_name}.py"
     test_path = Path("tests") / f"test_{tool_name}.py"

@@ -13,7 +13,7 @@ from mcp_app.tools.greet import GreetTool
 # Import additional tools here as needed
 # from mcp_app.tools.example import ExampleTool
 
-mcp = FastMCP("veryfastmcp-mcp")
+mcp = FastMCP("{{ project_name }}")
 
 # AUTO-REGISTER MARKER (do not remove): {VFMCP-AUTO-REGISTER}
 

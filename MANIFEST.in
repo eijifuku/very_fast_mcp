@@ -1,6 +1,3 @@
 recursive-include veryfastmcp/templates *
 include veryfastmcp/templates/app/.dockerignore
 include veryfastmcp/templates/app/gitignore
-include veryfastmcp/templates/app/docker-compose.yml
-include veryfastmcp/templates/mcp/README.md
-include veryfastmcp/templates/mcp/README.ja.md
