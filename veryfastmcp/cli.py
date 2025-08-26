@@ -116,8 +116,8 @@ def cmd_new(args: argparse.Namespace) -> None:
     # Render templates with project name
     _render_and_write(target, resources.files("veryfastmcp.templates.mcp") / "mcp_server.py", replacements)
     _render_and_write(target, resources.files("veryfastmcp.templates.mcp") / "pyproject.toml", replacements)
-    _render_and_write(target / "app", resources.files("veryfastmcp.templates.app") / "docker-compose.yml", replacements)
-    _render_and_write(target / "app", resources.files("veryfastmcp.templates.app") / "Dockerfile", replacements)
+    _render_and_write(target, resources.files("veryfastmcp.templates.app") / "docker-compose.yml", replacements)
+    _render_and_write(target, resources.files("veryfastmcp.templates.app") / "Dockerfile", replacements)
 
     # Copy test client script to project root
     test_client_src = resources.files("veryfastmcp.templates.mcp") / "test_client_stdio.py"
