@@ -1,0 +1,25 @@
+[project]
+name = "my-app"
+version = "0.1.0"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+mcp = [
+  "fastmcp>=0.1",
+  "PyYAML>=6",
+]
+
+[tool.setuptools]
+package-dir = {"" = "."}
+
+[tool.setuptools.packages.find]
+include = ["mcp_app*"]
+exclude = ["tests*", "configs*"]
+
+[tool.setuptools.package-data]
+mcp_app = ["**/*.yaml", "**/*.yml", "**/*.txt"]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]

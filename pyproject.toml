@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "veryfastmcp"
+version = "0.1.0"
+description = "Very Fast MCP CLI"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.scripts]
+vfmcp = "veryfastmcp.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "."}
+include-package-data = true
+
+[tool.setuptools.packages.find]
+include = ["veryfastmcp"]
+exclude = ["tests*", "configs*"]
+
+[tool.setuptools.package-data]
+"veryfastmcp.templates.app" = ["**/*"]
+"veryfastmcp.templates.mcp" = ["**/*"]
+"veryfastmcp.templates.tool" = ["**/*"]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]

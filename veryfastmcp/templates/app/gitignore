@@ -1,0 +1,144 @@
+# ===== Python bytecode =====
+__pycache__/
+*.py[cod]
+*$py.class
+
+# ===== C extensions =====
+*.so
+
+# ===== Distribution / packaging =====
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# ===== Installer logs =====
+pip-log.txt
+pip-delete-this-directory.txt
+
+# ===== Unit test / coverage =====
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache/
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+.pyre/
+.mypy_cache/
+.pytype/
+.pyre_cache/
+.dmypy.json
+.pyright/
+.pyrightcache/
+.ruff_cache/
+.pyre_configuration.local
+.pyre_configuration
+
+# ===== Translations =====
+*.mo
+*.pot
+
+# ===== Django =====
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# ===== Flask =====
+instance/
+.webassets-cache
+
+# ===== Scrapy =====
+.scrapy/
+
+# ===== Sphinx docs =====
+docs/_build/
+
+# ===== PyBuilder =====
+target/
+
+# ===== Jupyter =====
+.ipynb_checkpoints/
+
+# ===== IPython =====
+profile_default/
+ipython_config.py
+
+# ===== pyenv =====
+.python-version
+
+# ===== pipenv =====
+# Pipfile.lock は追跡する（ignore しない）
+
+# ===== Poetry =====
+# poetry.lock は追跡する（ignore しない）
+
+# ===== PDM =====
+__pypackages__/
+# pdm.lock は追跡する（ignore しない）
+
+# ===== uv / virtualenv =====
+.venv/
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# ===== PyInstaller =====
+*.manifest
+*.spec
+
+# ===== mkdocs =====
+/site/
+
+# ===== dotenv =====
+.env
+.env.*
+!.env.example
+
+# ===== Editors / IDE =====
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+!.vscode/launch.json
+!.vscode/tasks.json
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# ===== OS-specific =====
+.DS_Store
+.DS_Store?
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# ===== Misc =====
+*.swp
+*~
+.benchmarks/
+
+# ===== Project-specific overrides =====
+# （必要ならここに追加）

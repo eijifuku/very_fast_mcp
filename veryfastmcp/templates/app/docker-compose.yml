@@ -1,0 +1,21 @@
+version: "3.9"
+
+services:
+  mcp:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        PYTHON_VERSION: 3.12-slim
+    image: ${COMPOSE_PROJECT_NAME:-mcp}-server:latest
+    stdin_open: true  # keep STDIN open for stdio transport
+    tty: true         # allocate a TTY
+    volumes:
+      - .:/app       # mount project into container
+    # The default CMD in Dockerfile starts stdio server: python mcp_server.py
+    # command: ["python", "mcp_server.py"]
+    # For HTTP mode, you can expose ports and override command as needed:
+    # ports:
+    #   - "8009:8009"
+
+
