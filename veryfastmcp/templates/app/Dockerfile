@@ -18,5 +18,5 @@ USER app
 CMD ["python", "mcp_server.py"]
 
 # HTTP用の設定（コメントアウト）
-# EXPOSE 8000
-# CMD ["python", "mcp_server.py", "--transport", "http", "--host", "0.0.0.0", "--port", "8000"]
+# EXPOSE 8009
+# CMD ["python", "mcp_server.py", "--transport", "http", "--host", "0.0.0.0", "--port", "8009"]

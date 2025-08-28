@@ -61,7 +61,7 @@ run_options:
   transport: stdio
   # transport: http
   # host: 127.0.0.1
-  # port: 8000
+  # port: 8009
   # path: /mcp
 ```
 
@@ -179,7 +179,7 @@ Create or edit the `.cursor/mcp.json` file to add your created MCP server:
 {
   "mcpServers": {
     "my-mcp-server": {
-      "url": "http://localhost:8000/mcp"
+      "url": "http://localhost:8009/mcp"
     }
   }
 }
@@ -213,7 +213,7 @@ Create or edit the `.cursor/mcp.json` file to add your created MCP server:
 {
   "mcpServers": {
     "my-mcp-docker": {
-      "url": "http://localhost:8000/mcp"
+      "url": "http://localhost:8009/mcp"
     }
   }
 }
@@ -228,7 +228,7 @@ docker build -t my-mcp-server .
 docker run --rm -i my-mcp-server:latest
 
 # Start container (http mode)
-docker run --rm -p 8000:8000 my-mcp-server:latest
+docker run --rm -p 8009:8009 my-mcp-server:latest
 ```
 
 ## Commands
