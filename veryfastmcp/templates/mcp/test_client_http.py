@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Simple MCP client test using FastMCP official client (HTTP connection)
-- Connects to HTTP MCP server at http://127.0.0.1:8008/mcp
+- Connects to HTTP MCP server at http://127.0.0.1:8009/mcp
 - Calls tools/list and tools/call for greet
 """
 

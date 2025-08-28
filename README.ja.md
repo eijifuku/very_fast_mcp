@@ -59,7 +59,7 @@ run_options:
   transport: stdio
   # transport: http
   # host: 127.0.0.1
-  # port: 8000
+  # port: 8009
   # path: /mcp
 ```
 
@@ -179,7 +179,7 @@ async def test_search_ng():
 {
   "mcpServers": {
     "my-mcp-server": {
-      "url": "http://localhost:8000/mcp"
+      "url": "http://localhost:8009/mcp"
     }
   }
 }
@@ -213,7 +213,7 @@ async def test_search_ng():
 {
   "mcpServers": {
     "my-mcp-docker": {
-      "url": "http://localhost:8000/mcp"
+      "url": "http://localhost:8009/mcp"
     }
   }
 }
@@ -229,7 +229,7 @@ docker build -t my-mcp-server .
 docker run --rm -i my-mcp-server:latest
 
 # コンテナを起動（httpモード）
-docker run --rm -p 8000:8000 my-mcp-server:latest
+docker run --rm -p 8009:8009 my-mcp-server:latest
 ```
 
 ## コマンド
