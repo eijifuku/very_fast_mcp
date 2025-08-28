@@ -35,8 +35,16 @@ def test_new(tmp_path: Path) -> None:
     # Check unified Dockerfile content
     df = (project / "Dockerfile").read_text(encoding="utf-8")
     assert 'CMD ["python", "mcp_server.py"]' in df
-    assert "# EXPOSE 8000" in df
+    assert "# EXPOSE 8009" in df
     assert '# CMD ["python", "mcp_server.py", "--transport", "http"' in df
+
+
+def test_new_fails_when_target_is_file(tmp_path: Path) -> None:
+    target = tmp_path / "existing.txt"
+    target.write_text("data", encoding="utf-8")
+    result = run_cli("new", str(target))
+    assert result.returncode == 1
+    assert "is a file" in result.stdout
 
 
 def test_generate_tool(tmp_path: Path) -> None:

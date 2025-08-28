@@ -102,6 +102,10 @@ def cmd_new(args: argparse.Namespace) -> None:
     target = Path(args.dir)
     project_name = target.name # プロジェクト名を取得
 
+    if target.exists() and not target.is_dir():
+        print(f"[ERROR] {target} is a file. Please specify a directory.")
+        raise SystemExit(1)
+
     if target.exists() and any(target.iterdir()) and not args.force:
         print(f"[ERROR] {target} is not empty. Use --force to overwrite.")
         raise SystemExit(1)
