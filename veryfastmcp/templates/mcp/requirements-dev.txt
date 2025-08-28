@@ -1,1 +1,3 @@
 pytest
+fastmcp>=0.1
+PyYAML>=6
