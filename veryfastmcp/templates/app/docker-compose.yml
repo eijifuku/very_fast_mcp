@@ -16,6 +16,6 @@ services:
     # command: ["python", "mcp_server.py"]
     # For HTTP mode, you can expose ports and override command as needed:
     # ports:
-    #   - "8009:8009"
+    #   - "8000:8000"
 
 
