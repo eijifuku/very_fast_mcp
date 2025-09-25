@@ -3,7 +3,16 @@
 *[日本語版はこちら](README.ja.md)*
 
 "Very Fast" scaffolding & generator for FastMCP. Generate a complete MCP server skeleton with a single command, automating server configuration and routing setup. Developers can focus solely on implementing business logic and build production-ready MCP servers in minutes.
-
+  
+> ⚠️ Important Notice (No Support / No PR / No Issues)
+>
+> This repository is primarily for personal use. You may use it freely under the license, but the author provides:
+> - No warranty, no liability
+> - No support or Q&A
+> - No pull requests or issues will be accepted
+>
+> Use at your own risk.
+  
 ## Features
 - **Scaffold**: `vfmcp new <dir>` creates an MCP server skeleton with `configs/server.yaml` and `mcp_server.py`.
 - **Generator**: `vfmcp generate tool <Name>` adds a tool and its test.
